@@ -1,68 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111;
+  color: white;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 430px; /* iPhone 12 and up */
+  margin: auto;
+  --deep-green: #294938;
+  --lime-green: #9bbf31;
+  --lemon-yellow: #faf64c;
+  --beige: #f4ede4;
+  --light-green: #e1eed9;
+  --tight-black: #292929;
+  --light-gray: #d4d7d6;
+  --full-white: #ffffff;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* COLORS! :) */
+
+/* index.css or global.css */
+
+/* Custom Background Colors */
+.bg-deep-green {
+  background-color: var(--deep-green);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.bg-lime-green {
+  background-color: var(--lime-green);
+}
+
+.bg-lemon-yellow {
+  background-color: var(--lemon-yellow);
+}
+
+.bg-beige {
+  background-color: var(--beige);
+}
+
+.bg-light-green {
+  background-color: var(--light-green);
+}
+
+.bg-tight-black {
+  background-color: var(--tight-black);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.bg-full-white {
+  background-color: var(--full-white);
+}
+
+/* Custom Text Colors */
+.text-deep-green {
+  color: var(--deep-green);
+}
+
+.text-lime-green {
+  color: var(--lime-green);
+}
+
+.text-lemon-yellow {
+  color: var(--lemon-yellow);
+}
+
+.text-beige {
+  color: var(--beige);
+}
+
+.text-light-green {
+  color: var(--light-green);
+}
+
+.text-tight-black {
+  color: var(--tight-black);
+}
+
+.text-light-gray {
+  color: var(--light-gray);
+}
+
+.text-full-white {
+  color: var(--full-white);
+}
+
+/* Custom Border Colors */
+.border-deep-green {
+  border-color: var(--deep-green);
+}
+
+.border-lime-green {
+  border-color: var(--lime-green);
+}
+
+.border-lemon-yellow {
+  border-color: var(--lemon-yellow);
+}
+
+.border-beige {
+  border-color: var(--beige);
+}
+
+.border-light-green {
+  border-color: var(--light-green);
+}
+
+.border-tight-black {
+  border-color: var(--tight-black);
+}
+
+.border-light-gray {
+  border-color: var(--light-gray);
+}
+
+.border-full-white {
+  border-color: var(--full-white);
+}
+
+/* Custom Shadow Colors */
+.shadow-deep-green {
+  box-shadow: 0 2px 4px var(--deep-green);
+}
+
+.shadow-lime-green {
+  box-shadow: 0 2px 4px var(--lime-green);
+}
+
+.shadow-lemon-yellow {
+  box-shadow: 0 2px 4px var(--lemon-yellow);
+}
+
+.shadow-beige {
+  box-shadow: 0 2px 4px var(--beige);
+}
+
+.shadow-light-green {
+  box-shadow: 0 2px 4px var(--light-green);
+}
+
+.shadow-tight-black {
+  box-shadow: 0 2px 4px var(--tight-black);
+}
+
+.shadow-light-gray {
+  box-shadow: 0 2px 4px var(--light-gray);
+}
+
+.shadow-full-white {
+  box-shadow: 0 2px 4px var(--full-white);
 }
