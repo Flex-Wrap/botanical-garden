@@ -12,7 +12,7 @@ const ButtonBar: React.FC<ButtonBarProps> = ({ progress, onSkip, onContinue }) =
     <div className="w-full flex items-center justify-between px-6 py-4">
       {/* Skip Button */}
       <button
-        className="text-light-green underline"
+        className="text-full-white underline bold"
         onClick={onSkip} // Trigger the onSkip callback
       >
         Skip
