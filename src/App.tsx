@@ -7,7 +7,7 @@ import Plant from "./pages/Plant";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/botanical-garden">
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/onboarding" element={<Onboarding />} />
