@@ -58,12 +58,12 @@ function Map() {
           style={{ backgroundColor: "rgba(47, 84, 55, 0.5)", backdropFilter: "blur(4px)" }}>
           <div className="w-4/5 max-w-md bg-white text-black p-4 rounded-lg shadow-lg flex flex-col">
             <div className="flex justify-between items-center">
-              <h2 className="text-lg font-bold">Welcome to the Map!</h2>
+              <h2 className="text-lime-green text-lg font-bold">Greetings, adventurer!</h2>
               <button onClick={() => setShowPopup(false)}>
                 <X className="w-6 h-6 text-gray-700" />
               </button>
             </div>
-            <p className="mt-2 text-sm">Explore the map and interact with different locations.</p>
+            <p className="mt-2 text-sm">Welcome to our world of roots and love, where every plant has an role. Here, you'll meet our garden family and they will share their unique traits. Step forward, learn their secrets, and discover the fascinating mysteries of plant family life!</p>
           </div>
         </div>
       )}
