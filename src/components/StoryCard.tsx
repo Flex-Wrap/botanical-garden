@@ -9,7 +9,7 @@ interface Props {
 export default function StoryCard({icon, name, description} : Props) {
     const navigate = useNavigate(); // Initialize the navigate function
     const handleContinue = () => {
-        navigate("/map"); // Redirect to the /onboarding2 route
+        navigate("/map", { state: { showPopup: true } }) // Redirect to the /onboarding2 route
       };
 
     return (
