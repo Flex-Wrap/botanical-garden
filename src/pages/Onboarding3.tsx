@@ -6,12 +6,12 @@ function OnboardingThree() {
 
     // Callback for Skip button - Navigates to the Map page
     const handleSkip = () => {
-      navigate("/map"); // Redirect to the /map route
+      navigate("/story-selection"); // Redirect to the /map route
     };
   
     // Callback for Continue button - Navigates to OnboardingTwo page
     const handleContinue = () => {
-      navigate("/map"); // Redirect to the /onboarding2 route
+      navigate("/story-selection"); // Redirect to the /onboarding2 route
     };
 
   return (
