@@ -1,21 +1,104 @@
+import { useState, useEffect } from 'react';
 import NotificationBar from "../components/NotificationBar";
 
+interface Notification {
+  message: string;
+  name: string;
+}
+
 function Map() {
-    return (
-      <div className="h-full w-full flex flex-col items-center justify-center bg-red-900 text-white">
-        <h1 className="text-2xl font-bold">This is the map page</h1>
+  // Create an array of notifications with appropriate images based on plant names
+  const notifications: Notification[] = [
+    {
+      message: "Hello there! First time here?",
+      name: "Angela",
+    },
+    {
+      message: "Hello There! First time here?",
+      name: "Angela",
+    },
+    {
+      message: "Come here Amigo! But not too close though.", 
+      name: "Pedro",
+    },
+    {
+      message: "Uh? Another visitor...", 
+      name: "Lily",
+    },
+    {
+      message: "Welcome young one!", 
+      name: "Old Joe",
+    },
+    {
+      message: "Hey there buddy...",
+      name: "Robert the Giant",
+    },
+    {
+      message: "Hello! Seems you came to the Bamboo Grove!",
+      name: "Takara",
+    },
+    {
+      message: "Can you see me? I am over the pond!",
+      name: "Sofia",
+    },
+    {
+      message: "Welcome to the Botanical Garden wanderer.",
+      name: "Queen Petra",
+    },
+    {
+      message: "Oh! Glad you found me!",
+      name: "Jack the Homeless",
+    },
+  ];
+
+  const [showNotification, setShowNotification] = useState(false);
+  const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
+
+  const handleShowNotification = () => {
+    setShowNotification(true);  // Show notification
+    // Move to the next notification in the array
+    if (currentNotificationIndex < notifications.length - 1) {
+      setCurrentNotificationIndex(currentNotificationIndex + 1);
+    } else {
+      setCurrentNotificationIndex(0); // Reset back to the first notification
+    }
+  };
+
+  // Hide notification after a specified duration
+  useEffect(() => {
+    if (showNotification) {
+      const timer = setTimeout(() => {
+        setShowNotification(false); // Hide the notification
+      }, 6000); // The duration is 3000ms or 3 seconds
+
+      return () => clearTimeout(timer);  // Cleanup the timeout if component unmounts or changes
+    }
+  }, [showNotification]);  // This effect runs when `showNotification` changes
+
+  return (
+    <div className="h-full w-full flex flex-col items-center justify-center bg-deep-green text-white"
+    style={{
+      backgroundImage: `url(${import.meta.env.BASE_URL}assets/map.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
+      {!showNotification && (
+        <button
+          className="absolute bottom-0 mb-8 bg-lemon-yellow text-deep-green font-bold py-2 px-8 rounded-full mt-4"
+          onClick={handleShowNotification}
+        >
+          Check
+        </button>
+      )}
+      {showNotification && (
         <NotificationBar
-        message="You are near Golden Gate Park!"
-        targetLatitude={56.153814}
-        targetLongitude={10.214543}
-        radius={200}
-        imageUrl={"https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEyL3Jhd3BpeGVsb2ZmaWNlOV8zZF9jaGFyYWN0ZXJfY3V0ZV9hX2JveV9zdHVkZW50c193YWxraW5nX3BsYXlmdV81NmIxOThiNy1mNTQzLTRiNWMtOTE0MC0xYTExYzk2Yjk3YTQtbTRyeDh2YnkucG5n.png"}
-        name={"Aaron"}
-      />
-      </div>
-      
-    );
-  }
-  
-  export default Map;
-  
+          message={notifications[currentNotificationIndex].message}
+          name={notifications[currentNotificationIndex].name}
+          isVisible={showNotification} // Pass visibility control to the NotificationBar
+        />
+      )}
+    </div>
+  );
+}
+
+export default Map;

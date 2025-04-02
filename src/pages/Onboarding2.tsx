@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import onboarding2 from '../assets/onboarding2.png';
-import ButtonBar from "../components/buttonBar"; // Import the ButtonBar component
+import ButtonBar from "../components/ButtonBar"; // Import the ButtonBar component
 
 function OnboardingTwo() {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -19,7 +18,7 @@ function OnboardingTwo() {
     <div
       className="h-full w-full flex flex-col items-center justify-center bg-lime-green text-white relative"
       style={{
-        backgroundImage: `url(${onboarding2})`,
+        backgroundImage: `url(${import.meta.env.BASE_URL}assets/onboarding2.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

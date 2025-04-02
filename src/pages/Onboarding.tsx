@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import onboarding1 from '../assets/onboarding1.png';
-import ButtonBar from "../components/buttonBar"; // Import the ButtonBar component
+import ButtonBar from "../components/ButtonBar"; // Import the ButtonBar component
 
 function Onboarding() {
   // Callback for Skip button
@@ -20,7 +19,7 @@ function Onboarding() {
     <div
       className="h-full w-full flex flex-col items-center justify-center bg-lime-green text-white relative"
       style={{
-        backgroundImage: `url(${onboarding1})`,
+        backgroundImage: `url(${import.meta.env.BASE_URL}assets/onboarding1.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
