@@ -168,3 +168,8 @@ body {
   box-shadow: 0 2px 4px var(--full-white);
 }
 
+fdf {
+  position: absolute;
+  bottom: 17px;
+  right: 17px;
+}
