@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Props {
     icon: string;
     name: string;
@@ -5,14 +7,19 @@ interface Props {
 }
 
 export default function StoryCard({icon, name, description} : Props) {
+    const navigate = useNavigate(); // Initialize the navigate function
+    const handleContinue = () => {
+        navigate("/map"); // Redirect to the /onboarding2 route
+      };
+
     return (
-        <div className="flex flex-row gap-5 relative p-4 bg-[#E1EED9] rounded-2xl">
+        <div className="flex flex-row gap-5 relative p-4 bg-[#E1EED9] rounded-2xl w-[360px] items-top">
             <img src={icon}/>
             <div>
-                <h3 >{name}</h3>
-                <p>{description}</p>
+                <h3 className="text-[20px] font-semibold text-[#294938]">{name}</h3>
+                <p className="text-[14px] font-normal text-[#294938]">{description}</p>
             </div>
-            <button className="absolute bottom-4 right-4"><img src="assets/continueButton.svg"/></button>
+            <button className="absolute bottom-2 right-2" onClick={handleContinue}><img src="assets/continueButton.svg"/></button>
         </div>
     )
 }
