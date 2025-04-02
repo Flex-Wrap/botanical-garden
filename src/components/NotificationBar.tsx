@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface NotificationProps {
   message: string;
@@ -12,12 +13,18 @@ const NotificationBar: React.FC<NotificationProps> = ({
   isVisible,
 }) => {
 
+  const navigate = useNavigate(); // Initialize the navigate function
+const handleContinue = () => {
+    navigate("/plant"); // Redirect to the /onboarding2 route
+};
+
   return (
     <>
       {isVisible && (
         <div
           className="fixed bottom-0 left-0 w-80 bg-white bg-opacity-40 rounded-full shadow-lg py-4 px-6 flex items-center space-x-4 mb-8 mx-8"
           style={{ animation: 'slideIn 5s ease-out' }}
+          onClick={handleContinue}
         >
           <img
             src={`${import.meta.env.BASE_URL}assets/${name}.png`}
