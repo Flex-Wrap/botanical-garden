@@ -1,0 +1,85 @@
+[
+    {
+        "storytype":"academic",
+        "concept":"Greetings, adventurer! Welcome to the Garden Academy - a world of living wisdom where every plant is a master of its domain. Here, you'll meet our esteemed instructors, each ready to share their secrets of growth and survival: Step forward and engage with each mentor in our academy. Learn their secrets, uncover the mysteries of plant life!",
+        
+        "characters": [
+            {"name":"Angela", 
+            "scientificname":"Ceratonia silliqua", 
+            "story":"Hi there, I'm Angela (Carob Tree, Ceratonia siliqua)—the strong, evergreen tree from the Mediterranean. I can grow up to 15 meters tall and do well in dry, alkaline soil. My pods are full of fiber and calcium, making a natural substitute for chocolate. Let me show you the secrets of growing strong even in dry lands. There isn't a single correct answer—you can always find alternative solutions and substitutes in life." },
+            {"name":"Pedro", 
+            "scientificname":"Trichocereus macrogonus", 
+            "story":"Watch your step—I'm Pedro (San Pedro Cactus, Trichocereus macrogonus), a bold cactus who loves the art of survival! My thick stem stores water, and my sharp spines protect me in sandy, well-drained soil with little water. Explore with me the harsh desert environment and join me as we learn how to become friends with tough conditions and enjoy the simple beauty of succulents."},
+            {"name":"Lily", 
+            "scientificname":"Canna indica", 
+            "story":"Hi there, I'm Lily(Canna Lily, Canna indica)—the bright tropical flower! I love living in rich, well-drained soil, and my big, colorful blooms show off nature's beauty. Let me show you how plants can grow new ones from their own roots and share how my starchy roots have been used to make natural colors and tasty treats." },
+            {"name":"Old Joe",
+            "scientificname":"Ceratonia Tillandsia usneoides", 
+            "story":"Greetings, I'm Joe (Spanish Moss, Tillandsia usneoides) the quiet observer of the epiphytic world. I live without soil, absorbing moisture and nutrients directly from the air. Wander with me to learn how humidity and airflow are essential for life. My skill is to hang by myself and don't grow roots  where it is unnecessary." },
+            {"name":"Robert the Giant", 
+            "scientificname":"Ravenala madagascariensis", 
+            "story":"Hello, I'm Robert the Giant (Traveler's Palm, Ravenala madagascariensis) —the kind, handsome, and protective guardian of our tropical area . My broad, fan-shaped leaves capture rainwater like natural reservoirs, providing shade and shelter for all. I've lived for decades, and my gentle wisdom helps protect our garden from the blazing sun. I will teach you how storing reserves can help you in tough times." },
+            {"name":"Takara", 
+            "scientificname":"Bambus vulgaris", 
+            "story":"Greetings, I'm Takara (Common Bamboo, Bambusa vulgaris) —the fastest-growing guide to the world of grasses. As one of the giants among grasses, my hollow canes can crate musical instruments. Come along and see how the sound of nature and peace can inspire creativity." },
+            {"name":"Sofia", 
+            "scientificname":"Hibiscus", 
+            "story":"Hello, I'm Sofia (Hibiscus acetosella). My bright red petals and soft leaves light up the garden and can be used to make tasty tea rich in vitamin C. Just with regular sunlight and water i can thrive and teach you what nutrients are crucial." },
+            {"name":"Queen Petra", 
+            "scientificname":"Petrea volubilis", 
+            "story":"Hello, I'm Petra, the Purple Wreath (Petrea volubilis) —your enthusiastic guide to climbing! My vibrant violet bracts flourish in warm, sunny conditions, and I love being trained on trellises to showcase my beauty. I'll teach you how to reach the highest levels and proper watering can help any vine bloom brilliantly." },
+            {"name":"Jack the Homeless", 
+            "scientificname":"Colvillea racemosa", 
+            "story":"Hi, I'm Jack (Colvillea racemosa)—a lesson in resilience and recovery. Once a proud bloom, I now stand as a reminder that a fail to take care can kill even the brightest of flowers. But with consistent care, water, and sunlight, I know my roots can revive, and I can blossom again. My lesson is one of hope—every living thing deserves a second chance."}
+        ]
+    },
+    {
+        "storytype":"family",
+        "concept":"Greetings, adventurer! Welcome to our world of roots and love, where every plant has an role. Here, you'll meet our garden family—the parents, children, and uncles—each sharing their unique traits. Step forward, learn their secrets, and discover the fascinating mysteries of plant family life!",
+
+        "characters": [
+            {"name":"Angela", 
+            "scientificname":"Ceratonia silliqua", 
+            "story":"Greetings, I'm Angela (Carob Tree, Ceratonia siliqua) — the rebellious daughter of our garden family. I'm a flowering evergreen tree, forever young and full of energy. My appearance might seem a bit spiky because of my brown pods, but they serve as a natural chocolate substitute, packed with fiber and calcium. Among my sisters, I grow the tallest — reaching up to 15 meters. My favorite places are Portugal, Italy, and Morocco, where the carob tree is celebrated and widely produced." },
+            {"name":"Pedro", 
+            "scientificname":"Trichocereus macrogonus", 
+            "story":"Watch your step — I'm Pedro (San Pedro Cactus, Trichocereus macrogonus), the adventurous son. My thick, water-storing stem keeps me strong during the driest times, showcasing my strong character and I thrive in sandy, well-drained soil with only a little water every few weeks.  My sharp spines serve as armor in the wilderness, protecting me from hungry predators. Each scratch on my skin tells a story of spirited freedom."},
+            {"name":"Lily", 
+            "scientificname":"Canna indica", 
+            "story":"Hi there, I'm Lily Canna (Canna Lily, Canna indica) — Queen Petra's oldest daughter! I'm the brightest flower in our garden, full of strength and grace. I live in rich, damp soil, and my red, lively blooms bring light to even the darkest corners. My strong roots have been used for a long time to make beautiful natural dyes and tasty treats. Hummingbirds love to visit me, sipping sweet nectar from my blossoms. I am the center of attention and love to cheer up every space I touch." },
+            {"name":"Old Joe", 
+            "scientificname":"Ceratonia Tillandsia usneoides", 
+            "story":"I'm Old Joe (Spanish Moss, Tillandsia usneoides). As an epiphyte, I don't root in soil; instead, I float gracefully in humid air. I absorb nutrients directly from the air. I've watched over this realm for many years, providing shelter to others. I act as a natural air filter in warm climates. So when discussions arise between my sons, I know how to ease them. My presence reminds us that sometimes protection comes from simply being there." },
+            {"name":"Robert the Giant", 
+            "scientificname":"Ravenala madagascariensis",
+            "story":"Greetings, I'm Robert the Giant (Traveler's Palm, Ravenala madagascariensis) — the kind, handsome, and protective traveler of our garden. I stand tall with big, fan-shaped leaves that capture up to 1 liter of rainwater like little pools, offering refreshment and shelter to every creature. I might look scary and unreachable, but many times I save lives with the water I provide." },
+            {"name":"Takara", 
+            "scientificname":"Bambus vulgaris", 
+            "story":"Good day, I'm Uncle Takara (Common Bamboo, Bambus vulgaris) — the quietly wise monk of our tribe. My bamboo stalks can grow faster than almost any plant — up to 80 cm per day — and my hollow canes hold the stories of ancient woodlands. That means I'm always ready to tap you gently with a bit of playful wisdom, my rustling leaves whisper secrets of nature. When you feel creative I let you create musical instruments from my canes." },
+            {"name":"Sofia", 
+            "scientificname":"Hibiscus", 
+            "story":"Hello, friend! I'm Sofia Hibiscus (Hibiscus acetosella) — the gentle soul and calming heart of our garden family. Every morning, as the sun rises over our garden, I softly unfurl my golden scarlet petals with a warm smile, greeting the day. I flourish in warm, sunny spots with rich soil. I enjoy regular watering — I believe a good balance and routine make my roots strong. I share my sweet-tart tea with everyone, which is packed with vitamin C and has a delicate flavor." },
+            {"name":"Queen Petra", 
+            "scientificname":"Petrea volubilis", 
+            "story":"Hello, I'm Queen Petra — the Purple Wreath (Petrea volubilis). As mother to Sofia, Lily, and Angela, I watch over my blooming daughters from high above, my coat is made from violet-blue flowers. I have created our home warm, humid and sunny — I attract busy bees and butterflies as guests and treat them with a sweet nectar. People plant me along fences and trellises to create living purple curtains that brighten gardens. That is a way for me to protect my family. Can you spot my star-shaped petals sparkling in the sunlight?" },
+            {"name":"Jack the Homeless", 
+            "scientificname":"Colvillea racemosa", 
+            "story":"Hi, I'm Jack “the Homeless” (Colvillea racemosa). Once a proud bloom, I now suffer from being left alone—a quiet reminder that every living soul needs care, water, and sunlight to flourish. Back in the day, I loved living in warm, tropical regions. Although I'm adapted to survive in challenging conditions, I still need consistent water and sunlight. I may have lost my vibrant glow, but with a little love, I know I can revive my roots and bloom once more—a gentle reminder that every living thing deserves care."}
+        ]
+    },
+    {
+        "storytype":"romantic",
+        "concept":"Hey, Lovers! Welcome to the Greenhouse of Love  where each plant stands as a hopeful romantic in search of connection. Steamy with humidity and blossoming connections this greenhouse holds hidden desires,  friendships, and tangled vines of love.Step forward and get lost in the poetic storytelling of romance.",
+        "characters": [
+            {"name":"Angela", "scientificname":"Ceratonia silliqua", "story":"" },
+            {"name":"Pedro", "scientificname":"Trichocereus macrogonus", "story":""},
+            {"name":"Lily", "scientificname":"Canna indica", "story":"" },
+            {"name":"Old Joe", "scientificname":"Ceratonia Tillandsia usneoides", "story":"" },
+            {"name":"Robert the Giant", "scientificname":"Ravenala madagascariensis", "story":"" },
+            {"name":"Takara", "scientificname":"Bambus vulgaris", "story":"" },
+            {"name":"Sofia", "scientificname":"Hibiscus", "story":"" },
+            {"name":"Queen Petra", "scientificname":"Petrea volubilis", "story":"" },
+            {"name":"Jack the Homeless", "scientificname":"Colvillea racemosa", "story":""}
+        ]
+    }
+]

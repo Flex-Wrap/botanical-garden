@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import NotificationBar from "../components/NotificationBar";
 import { ArrowLeft, X } from "lucide-react";
+import { useStory } from "../StoryContext"; // Import the context hook
 
 interface Notification {
   message: string;
@@ -11,9 +12,11 @@ interface Notification {
 function Map() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { selectedStory } = useStory(); // Access selectedStory from context
   const [showPopup, setShowPopup] = useState(location.state?.showPopup || false);
   const [showNotification, setShowNotification] = useState(false);
   const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
+  const [concept, setConcept] = useState<string | null>(null);
 
   const notifications: Notification[] = [
     { message: "Hello there! First time here?", name: "Angela" },
@@ -35,6 +38,22 @@ function Map() {
     }
   }, [showNotification]);
 
+  useEffect(() => {
+    if (selectedStory) {
+      fetch(`${import.meta.env.BASE_URL}/assets/stories.json`)
+        .then((res) => res.json())
+        .then((data) => {
+          const matchedStory = data.find(
+            (story: any) => story.storytype.toLowerCase() === selectedStory.toLowerCase()
+          );
+          if (matchedStory) {
+            setConcept(matchedStory.concept);
+          }
+        })
+        .catch((error) => console.error("Error loading story data:", error));
+    }
+  }, [selectedStory]);
+
   return (
     <div
       className="h-full w-full flex flex-col items-center justify-center bg-deep-green text-white"
@@ -54,8 +73,13 @@ function Map() {
 
       {/* Popup Overlay */}
       {showPopup && (
-        <div className="absolute inset-0 flex items-start justify-center pt-10 w-full h-full"
-          style={{ backgroundColor: "rgba(47, 84, 55, 0.5)", backdropFilter: "blur(4px)" }}>
+        <div
+          className="absolute inset-0 flex items-start justify-center pt-10 w-full h-full"
+          style={{
+            backgroundColor: "rgba(47, 84, 55, 0.5)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
           <div className="w-4/5 max-w-md bg-white text-black p-4 rounded-lg shadow-lg flex flex-col">
             <div className="flex justify-between items-center">
               <h2 className="text-lime-green text-lg font-bold">Greetings, adventurer!</h2>
@@ -63,11 +87,12 @@ function Map() {
                 <X className="w-6 h-6 text-gray-700" />
               </button>
             </div>
-            <p className="mt-2 text-sm">Welcome to our world of roots and love, where every plant has an role. Here, you'll meet our garden family and they will share their unique traits. Step forward, learn their secrets, and discover the fascinating mysteries of plant family life!</p>
+            <p className="mt-2 text-sm">{concept || "Loading..."}</p>
           </div>
         </div>
       )}
 
+      {/* Check Button */}
       {!showNotification && (
         <button
           className="absolute bottom-0 mb-8 bg-lemon-yellow text-deep-green font-bold py-2 px-8 rounded-full mt-4"
