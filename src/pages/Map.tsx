@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import NotificationBar from "../components/NotificationBar";
+import { ArrowLeft, X } from "lucide-react";
 
 interface Notification {
   message: string;
@@ -7,81 +9,62 @@ interface Notification {
 }
 
 function Map() {
-  // Create an array of notifications with appropriate images based on plant names
-  const notifications: Notification[] = [
-    {
-      message: "Hello there! First time here?",
-      name: "Angela",
-    },
-    {
-      message: "Hello There! First time here?",
-      name: "Angela",
-    },
-    {
-      message: "Come here Amigo! But not too close though.", 
-      name: "Pedro",
-    },
-    {
-      message: "Uh? Another visitor...", 
-      name: "Lily",
-    },
-    {
-      message: "Welcome young one!", 
-      name: "Old Joe",
-    },
-    {
-      message: "Hey there buddy...",
-      name: "Robert the Giant",
-    },
-    {
-      message: "Hello! Seems you came to the Bamboo Grove!",
-      name: "Takara",
-    },
-    {
-      message: "Can you see me? I am over the pond!",
-      name: "Sofia",
-    },
-    {
-      message: "Welcome to the Botanical Garden wanderer.",
-      name: "Queen Petra",
-    },
-    {
-      message: "Oh! Glad you found me!",
-      name: "Jack the Homeless",
-    },
-  ];
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [showPopup, setShowPopup] = useState(location.state?.showPopup || false);
   const [showNotification, setShowNotification] = useState(false);
   const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
 
+  const notifications: Notification[] = [
+    { message: "Hello there! First time here?", name: "Angela" },
+    { message: "Come here Amigo! But not too close though.", name: "Pedro" },
+    { message: "Uh? Another visitor...", name: "Lily" },
+    { message: "Welcome young one!", name: "Old Joe" },
+    { message: "Hey there buddy...", name: "Robert the Giant" },
+  ];
+
   const handleShowNotification = () => {
-    setShowNotification(true);  // Show notification
-    // Move to the next notification in the array
-    if (currentNotificationIndex < notifications.length - 1) {
-      setCurrentNotificationIndex(currentNotificationIndex + 1);
-    } else {
-      setCurrentNotificationIndex(0); // Reset back to the first notification
-    }
+    setShowNotification(true);
+    setCurrentNotificationIndex((prevIndex) => (prevIndex + 1) % notifications.length);
   };
 
-  // Hide notification after a specified duration
   useEffect(() => {
     if (showNotification) {
-      const timer = setTimeout(() => {
-        setShowNotification(false); // Hide the notification
-      }, 6000); // The duration is 3000ms or 3 seconds
-
-      return () => clearTimeout(timer);  // Cleanup the timeout if component unmounts or changes
+      const timer = setTimeout(() => setShowNotification(false), 6000);
+      return () => clearTimeout(timer);
     }
-  }, [showNotification]);  // This effect runs when `showNotification` changes
+  }, [showNotification]);
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-deep-green text-white"
-    style={{
-      backgroundImage: `url(${import.meta.env.BASE_URL}assets/map.png)`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
+    <div
+      className="h-full w-full flex flex-col items-center justify-center bg-deep-green text-white"
+      style={{
+        backgroundImage: `url(${import.meta.env.BASE_URL}assets/map.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Top Navigation Bar */}
+      <div className="absolute top-3 left-0 w-full bg-transparent p-4 flex items-center gap-5">
+        <button onClick={() => navigate("/story-selection")}>
+          <ArrowLeft className="text-tight-black" />
+        </button>
+        <span className="text-deep-green text-lg">Choose another story</span>
+      </div>
+
+      {/* Popup Overlay */}
+      {showPopup && (
+        <div className="absolute top-10 w-4/5 max-w-md bg-white text-black p-4 rounded-lg shadow-lg flex flex-col">
+          <div className="flex justify-between items-center">
+            <h2 className="text-lg font-bold">Welcome to the Map!</h2>
+            <button onClick={() => setShowPopup(false)}>
+              <X className="w-6 h-6 text-gray-700" />
+            </button>
+          </div>
+          <p className="mt-2 text-sm">Explore the map and interact with different locations.</p>
+        </div>
+      )}
+
       {!showNotification && (
         <button
           className="absolute bottom-0 mb-8 bg-lemon-yellow text-deep-green font-bold py-2 px-8 rounded-full mt-4"
@@ -94,7 +77,7 @@ function Map() {
         <NotificationBar
           message={notifications[currentNotificationIndex].message}
           name={notifications[currentNotificationIndex].name}
-          isVisible={showNotification} // Pass visibility control to the NotificationBar
+          isVisible={showNotification}
         />
       )}
     </div>
