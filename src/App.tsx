@@ -6,6 +6,7 @@ import Map from "./pages/Map";
 import Plant from "./pages/Plant";
 import OnboardingTwo from "./pages/Onboarding2";
 import OnboardingThree from "./pages/Onboarding3";
+import PlantMessage from "./pages/PlantMessage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/story-selection" element={<StorySelection />} />
         <Route path="/map" element={<Map />} />
         <Route path="/plant" element={<Plant />} />
+        <Route path="/plantMessage" element={<PlantMessage />} />
       </Routes>
     </Router>
   );

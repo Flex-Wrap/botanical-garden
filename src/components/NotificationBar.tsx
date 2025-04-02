@@ -15,7 +15,7 @@ const NotificationBar: React.FC<NotificationProps> = ({
 
   const navigate = useNavigate(); // Initialize the navigate function
 const handleContinue = () => {
-    navigate("/plant"); // Redirect to the /onboarding2 route
+  navigate(`/plantMessage/${name}`);
 };
 
   return (

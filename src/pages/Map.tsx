@@ -38,6 +38,7 @@ function Map() {
     }
   }, [showNotification]);
 
+  {/* THIS IS THE STORY READER USEEFFECT */}
   useEffect(() => {
     if (selectedStory) {
       fetch(`${import.meta.env.BASE_URL}/assets/stories.json`)
