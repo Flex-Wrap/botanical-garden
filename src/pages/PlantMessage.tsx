@@ -11,9 +11,12 @@ export default function PlantMessage() {
         navigate("/map"); // Navigate to the map page
     };
 
+    const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
+    console.log(sanitizedClassName);
+
     return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-white text-white">
-        <div className={`body-${name}`}>
+        <div className={sanitizedClassName}>
             {/* Back button */}
             <div className="back-button" onClick={handleBackToMap}>
                 <img src={back} alt="Back to map" />
