@@ -19,9 +19,6 @@ export default function PlantMessage() {
         navigate(`/plant/${name}`)
 
     };
-  const handleBackToMap = () => {
-    navigate("/map");
-  };
 
   // Full message
   const fullMessage = `Greetings, I’m ${name} (Carob Tree, Ceratonia siliqua) — the rebellious daughter of our garden family. I’m a flowering evergreen tree, forever young and full of energy.
@@ -82,6 +79,7 @@ export default function PlantMessage() {
             <img src={next} alt="Next" />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
