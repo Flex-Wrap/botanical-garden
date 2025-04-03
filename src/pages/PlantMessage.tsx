@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import next from 'assets/next.svg';
-import back from 'assets/backbutton.svg';
+import next from '/assets/next.svg';
+import back from '/assets/backbutton.svg';
 
 export default function PlantMessage() {
     const { name } = useParams<{ name: string }>(); // Get the plant name from URL parameters
