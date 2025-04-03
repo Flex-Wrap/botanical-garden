@@ -33,7 +33,7 @@ function Map() {
 
   useEffect(() => {
     if (showNotification) {
-      const timer = setTimeout(() => setShowNotification(false), 6000);
+      const timer = setTimeout(() => setShowNotification(false), 3000);
       return () => clearTimeout(timer);
     }
   }, [showNotification]);

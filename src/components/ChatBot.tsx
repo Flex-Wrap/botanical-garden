@@ -99,7 +99,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
         <h3>Back to map</h3>
       </div></button>
       <div className="chat-container">
-        <div className="top-message">
+        <div className="top-message"> 
           <img src={`${import.meta.env.BASE_URL}assets/${name}.png`} alt={name} />
           <h4 className="text-black">{topMessage}</h4>
         </div>

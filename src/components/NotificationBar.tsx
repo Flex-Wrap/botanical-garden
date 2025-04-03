@@ -22,14 +22,14 @@ const handleContinue = () => {
     <>
       {isVisible && (
         <div
-          className="fixed bottom-0 left-0 w-80 bg-white bg-opacity-40 rounded-full shadow-lg py-4 px-6 flex items-center space-x-4 mb-8 mx-8"
+          className="fixed bottom-0 left-0 w-80 bg-white bg-opacity-80 rounded-2xl shadow-lg py-4 px-6 flex items-center space-x-4 mb-8 mx-8"
           style={{ animation: 'slideIn 5s ease-out' }}
           onClick={handleContinue}
         >
           <img
             src={`${import.meta.env.BASE_URL}assets/${name}.png`}
             alt="Notification"
-            className="absolute -top-15 -left-5 w-25 h-30 object-cover object-top"
+            className="absolute -top-15 -left-5 w-auto h-35 object-cover object-top"
           />
           <div className="flex flex-col ml-16">
             <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
