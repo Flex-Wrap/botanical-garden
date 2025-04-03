@@ -36,8 +36,6 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
     const chatBoxRef = useRef<HTMLDivElement | null>(null);
     const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
 
-    console.log(prompt)
-
     useEffect(() => {
         if (chatBoxRef.current) {
         chatBoxRef.current.scrollTo({
