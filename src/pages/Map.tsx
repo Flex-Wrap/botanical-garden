@@ -3,44 +3,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 import NotificationBar from "../components/NotificationBar";
 import { ArrowLeft, X } from "lucide-react";
 import { useStory } from "../StoryContext"; // Import the context hook
-
-interface Notification {
-  message: string;
-  name: string;
-}
+import { useNotification } from "../NotificationContext"; // Import notification context
 
 function Map() {
   const location = useLocation();
   const navigate = useNavigate();
   const { selectedStory } = useStory(); // Access selectedStory from context
+  const { notifications, currentNotificationIndex, showNotification, nextNotification, setShowNotification } = useNotification();
   const [showPopup, setShowPopup] = useState(
     location.state?.showPopup || false
   );
-  const [showNotification, setShowNotification] = useState(false);
-  const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
   const [concept, setConcept] = useState<string | null>(null);
-
-  const notifications: Notification[] = [
-    { message: "Hello there! First time here?", name: "Angela" },
-    { message: "Come here Amigo! But not too close though.", name: "Pedro" },
-    { message: "Uh? Another visitor...", name: "Lily" },
-    { message: "Welcome young one!", name: "Old Joe" },
-    { message: "Hey there buddy...", name: "Robert the Giant" },
-  ];
-
-  const handleShowNotification = () => {
-    setShowNotification(true);
-    setCurrentNotificationIndex(
-      (prevIndex) => (prevIndex + 1) % notifications.length
-    );
-  };
-
-  useEffect(() => {
-    if (showNotification) {
-      const timer = setTimeout(() => setShowNotification(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [showNotification]);
 
   {
     /* THIS IS THE STORY READER USEEFFECT */
@@ -61,6 +34,13 @@ function Map() {
         .catch((error) => console.error("Error loading story data:", error));
     }
   }, [selectedStory]);
+
+  useEffect(() => {
+    if (showNotification) {
+      const timer = setTimeout(() => setShowNotification(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showNotification, setShowNotification]);
 
   return (
     <div
@@ -103,14 +83,15 @@ function Map() {
       )}
 
       {/* Check Button */}
-      {!showNotification && (
-        <button
-          className="absolute bottom-5  flex justify-between bg-[#FAF64C] text-[#292929] font-poppins text-lg px-10 py-4 rounded-full"
-          onClick={handleShowNotification}
-        >
-          Check
-        </button>
-      )}
+      <button
+        className="absolute bottom-5 flex justify-between bg-[#FAF64C] text-[#292929] font-poppins text-lg px-10 py-4 rounded-full"
+        onClick={() => {
+          setShowNotification(true);
+          nextNotification();
+        }}
+      >
+        Check
+      </button>
       {showNotification && (
         <NotificationBar
           message={notifications[currentNotificationIndex].message}
