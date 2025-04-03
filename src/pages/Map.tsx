@@ -105,7 +105,7 @@ function Map() {
       {/* Check Button */}
       {!showNotification && (
         <button
-          className="absolute bottom-0 mb-8 bg-lemon-yellow text-deep-green font-bold py-2 px-8 rounded-full mt-4"
+          className="absolute bottom-5  flex justify-between bg-[#FAF64C] text-[#292929] font-poppins text-lg px-10 py-4 rounded-full"
           onClick={handleShowNotification}
         >
           Check
