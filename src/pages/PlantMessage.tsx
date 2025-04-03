@@ -12,7 +12,8 @@ export default function PlantMessage() {
     };
 
     return (
-        <div className="body-angela">
+    <div className="h-full w-full flex flex-col items-center justify-center bg-white text-white">
+        <div className={`body-${name}`}>
             {/* Back button */}
             <div className="back-button" onClick={handleBackToMap}>
                 <img src={back} alt="Back to map" />
@@ -41,5 +42,6 @@ export default function PlantMessage() {
                 </div>  
             </div>
         </div>
+    </div>
     );
 }

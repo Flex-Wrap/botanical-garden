@@ -18,11 +18,12 @@ function App() {
         <Route path="/onboarding3" element={<OnboardingThree />} />
         <Route path="/story-selection" element={<StorySelection />} />
         <Route path="/map" element={<Map />} />
-        <Route path="/plant" element={<Plant />} />
-        <Route path="/plantMessage" element={<PlantMessage />} />
+        <Route path="/plant/:name" element={<Plant />} />
+        <Route path="/plantMessage/:name" element={<PlantMessage />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
