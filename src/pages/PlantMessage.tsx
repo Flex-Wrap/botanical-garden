@@ -52,12 +52,6 @@ export default function PlantMessage() {
                 <img src={back} alt="Back to map" />
                 <h3>Back to map</h3>
             </div>
-      <div className={`body-${name}`}>
-        {/* Back button */}
-        <div className="back-button" onClick={handleBackToMap}>
-          <img src={back} alt="Back to map" />
-          <h3>Back to map</h3>
-        </div>
 
         <div className="chat-container">
           {/* Angela's audio message */}
@@ -79,7 +73,6 @@ export default function PlantMessage() {
             <img src={next} alt="Next" />
           </div>
         </div>
-      </div>
       </div>
     </div>
   );
