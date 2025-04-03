@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import next from "/assets/next.svg";
 import back from "/assets/backbutton.svg";
 import { useStory } from "../StoryContext";
+import AudioPlayButton from "../components/AudioPlayButton";
 
 export default function PlantMessage() {
   const { name } = useParams<{ name: string }>();
@@ -22,7 +23,6 @@ export default function PlantMessage() {
           if (matchedStory) {
             const character = matchedStory.characters.find(
                 (character: any) => character.name.toLowerCase() === name?.toLowerCase()
-                
             );
             if (character) {
                 setStory(character.story);
@@ -33,17 +33,16 @@ export default function PlantMessage() {
     }
   }, [selectedStory, name]);
 
-    // Handle the "Back to map" action
-    const handleBackToMap = () => {
-        navigate("/map"); // Navigate to the map page
-    };
+  // Handle the "Back to map" action
+  const handleBackToMap = () => {
+    navigate("/map");
+  };
 
-    const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
+  const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
 
-    const handleGoToChat = () => {
-        navigate(`/plant/${name}`)
-
-    };
+  const handleGoToChat = () => {
+    navigate(`/plant/${name}`);
+  };
 
   // Typing effect states
   const [displayedText, setDisplayedText] = useState("");
@@ -61,24 +60,28 @@ export default function PlantMessage() {
   
       return () => clearInterval(interval);
     }
-  }, [story]); // Depend on `story` instead of `[selectedStory, name]`
+  }, [story]); // Depend on `story`
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-white text-white">
-        <div className={sanitizedClassName}>
-            {/* Back button */}
-            <div className="back-button" onClick={handleBackToMap}>
-                <img src={back} alt="Back to map" />
-                <h3>Back to map</h3>
-            </div>
+      <div className={sanitizedClassName}>
+        {/* Back button */}
+        <div className="back-button" onClick={handleBackToMap}>
+          <img src={back} alt="Back to map" />
+          <h3>Back to map</h3>
+        </div>
 
         <div className="chat-container">
-          {/* Angela's audio message */}
+          {/* Angela's Name image and audio */}
           <div className="audio-message">
             <img
               src={`${import.meta.env.BASE_URL}assets/${name}.png`}
               alt={`${name} Plant`}
             />
+            {/* Audio player */}
+            {name && selectedStory && (
+              <AudioPlayButton name={name} category={selectedStory.toLowerCase()} />
+            )}
           </div>
 
           {/* Message box with typing effect */}
@@ -89,12 +92,14 @@ export default function PlantMessage() {
           {/* Chat with me button and next icon */}
           <div className="next-buttons">
             <button 
-                onClick={handleGoToChat}
-                className="bg-[#faf64c] text-[#292929] font-[Poppins] text-[18px] px-4 py-1 rounded-[20px]"
-                >
-                    Chat With Me 
+              onClick={handleGoToChat}
+              className="bg-[#faf64c] text-[#292929] font-[Poppins] text-[18px] px-4 py-1 rounded-[20px]"
+            >
+              Chat With Me 
             </button>
-            <button onClick={handleGoToChat} className="bg-none"><img src={next} alt="Next" /></button>
+            <button onClick={handleGoToChat} className="bg-none">
+              <img src={next} alt="Next" />
+            </button>
           </div>
         </div>
       </div>
