@@ -88,7 +88,12 @@ export default function PlantMessage() {
 
           {/* Chat with me button and next icon */}
           <div className="next-buttons">
-            <button onClick={handleGoToChat}>Chat With Me</button>
+            <button 
+                onClick={handleGoToChat}
+                className="bg-[#faf64c] text-[#292929] font-[Poppins] text-[18px] px-4 py-1 rounded-[20px]"
+                >
+                    Chat With Me 
+            </button>
             <button onClick={handleGoToChat} className="bg-none"><img src={next} alt="Next" /></button>
           </div>
         </div>

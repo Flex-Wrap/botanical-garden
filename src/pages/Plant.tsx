@@ -9,7 +9,6 @@ export default function Plant() {
   const [loading, setLoading] = useState<boolean>(true);
 
   if (name) {
-    console.log(name);
     {/*Fetch the plant data when the component mounts or the 'name' param changes*/}
     useEffect(() => {
       const fetchPlantData = async () => {
