@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import NotificationBar from "../components/NotificationBar";
-import { ArrowLeft, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { useStory } from "../StoryContext"; // Import the context hook
 import { useNotification } from "../NotificationContext"; // Import notification context
 
@@ -57,6 +57,14 @@ function Map() {
           <ArrowLeft className="text-tight-black" />
         </button>
         <span className="text-deep-green text-lg">Choose another story</span>
+      </div>
+
+      {/* Top Navigation Bar */}
+      <div className="absolute top-10 right-0 w-full bg-transparent p-4 flex items-center justify-end gap-5">
+        <span className="text-deep-green text-lg">Choose another story</span>
+        <button onClick={() => navigate("/story-selection")}>
+          <ArrowRight className="text-tight-black" />
+        </button>
       </div>
 
       {/* Popup Overlay */}
