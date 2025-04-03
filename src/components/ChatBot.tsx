@@ -31,9 +31,10 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState<string>("");
 
-    const API_KEY = import.meta.env.REACT_APP_API_KEY;
+    const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
     const chatBoxRef = useRef<HTMLDivElement | null>(null);
+    const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
 
     useEffect(() => {
         if (chatBoxRef.current) {
@@ -80,7 +81,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
           console.error("Error: Response structure is not as expected", response);
           setMessages((prevMessages) => [...prevMessages, { text: "Sorry, I am having trouble responding right now.", sender: "bot" }]);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error:", error);
         setMessages((prevMessages) => [...prevMessages, { text: "Sorry, I am having trouble responding right now.", sender: "bot" }]);
       }
@@ -93,7 +94,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
   };
 
   return (
-    <div className={`body-${name}`}>
+    <div className={sanitizedClassName}>
       <button onClick={() => navigate("/map")}><div className="back-button">
         <img src={back} alt="Back" />
         <h3>Back to map</h3>
@@ -101,7 +102,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
       <div className="chat-container">
         <div className="top-message"> 
           <img src={`${import.meta.env.BASE_URL}assets/${name}.png`} alt={name} />
-          <h4 className="text-black">{topMessage}</h4>
+          <h4 className="text-black text-xl font-medium">{topMessage}</h4>
         </div>
         <div className="chat-box" ref={chatBoxRef}>
           <div className="preset-questions">

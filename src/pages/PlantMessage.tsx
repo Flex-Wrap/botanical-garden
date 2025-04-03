@@ -2,10 +2,36 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import next from "/assets/next.svg";
 import back from "/assets/backbutton.svg";
+import { useStory } from "../StoryContext";
 
 export default function PlantMessage() {
   const { name } = useParams<{ name: string }>();
+  const { selectedStory } = useStory(); // Access selectedStory from context
+  const [story, setStory] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selectedStory) {
+      fetch(`${import.meta.env.BASE_URL}/assets/stories.json`)
+        .then((res) => res.json())
+        .then((data) => {
+          const matchedStory = data.find(
+            (story: any) =>
+              story.storytype.toLowerCase() === selectedStory.toLowerCase()
+          );
+          if (matchedStory) {
+            const character = matchedStory.characters.find(
+                (character: any) => character.name.toLowerCase() === name?.toLowerCase()
+                
+            );
+            if (character) {
+                setStory(character.story);
+            }
+          }
+        })
+        .catch((error) => console.error("Error loading story data:", error));
+    }
+  }, [selectedStory, name]);
 
     // Handle the "Back to map" action
     const handleBackToMap = () => {
@@ -13,36 +39,29 @@ export default function PlantMessage() {
     };
 
     const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
-    console.log(sanitizedClassName);
 
     const handleGoToChat = () => {
         navigate(`/plant/${name}`)
 
     };
 
-  // Full message
-  const fullMessage = `Greetings, I’m ${name} (Carob Tree, Ceratonia siliqua) — the rebellious daughter of our garden family. I’m a flowering evergreen tree, forever young and full of energy.
-
-    My appearance might seem a bit spiky because of my brown pods, but they serve as a natural chocolate substitute, packed with fiber and calcium. Among my sisters, I grow the tallest — reaching up to 15 meters. My favorite places are Portugal, Italy, and Morocco, where the carob tree is celebrated and widely produced.`;
-
   // Typing effect states
   const [displayedText, setDisplayedText] = useState("");
   const typingSpeed = 50; // Adjust typing speed (milliseconds per character)
 
   useEffect(() => {
-    let index = 0;
-
-    const interval = setInterval(() => {
-      if (index < fullMessage.length) {
-        setDisplayedText((prev) => prev + fullMessage[index]);
+    if (story) {
+      setDisplayedText(""); // Reset displayed text before typing starts
+      let index = 0;
+      const interval = setInterval(() => {
+        setDisplayedText((prev) => prev + story[index]); 
         index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, typingSpeed);
-
-    return () => clearInterval(interval);
-  }, [fullMessage]);
+        if (index >= story.length) clearInterval(interval);
+      }, typingSpeed);
+  
+      return () => clearInterval(interval);
+    }
+  }, [story]); // Depend on `story` instead of `[selectedStory, name]`
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-white text-white">
@@ -69,8 +88,13 @@ export default function PlantMessage() {
 
           {/* Chat with me button and next icon */}
           <div className="next-buttons">
-            <button onClick={handleGoToChat}>Chat With Me</button>
-            <button onClick={handleGoToChat}><img src={next} alt="Next" /></button>
+            <button 
+                onClick={handleGoToChat}
+                className="bg-[#faf64c] text-[#292929] font-[Poppins] text-[18px] px-4 py-1 rounded-[20px]"
+                >
+                    Chat With Me 
+            </button>
+            <button onClick={handleGoToChat} className="bg-none"><img src={next} alt="Next" /></button>
           </div>
         </div>
       </div>

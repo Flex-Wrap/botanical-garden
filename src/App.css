@@ -58,7 +58,7 @@
   padding: 70px 17px 60px 17px;
 }
 
-.body-Robert {
+.body-Robert-the-Giant {
   background-image: url("../public/assets/robertBG.png");
   background-size: cover;
   background-position: center;
@@ -179,6 +179,7 @@ input {
   width: 148px;
   height: auto;
 }
+/* 
 
 .top-message-robert {
   position: relative;
@@ -202,6 +203,7 @@ input {
   width: 250px;
   height: auto;
 }
+*/
 
 .audio-message {
   position: relative;
@@ -214,6 +216,7 @@ input {
   overflow: visible;
 }
 
+/*
 .audio-message-robert {
   position: relative;
   display: flex;
@@ -224,6 +227,16 @@ input {
   padding: 10px 10px 10px 100px;
   overflow: visible;
 }
+.audio-message-robert img {
+  position: absolute;
+  align-self: last baseline;
+  left: -60px;
+  bottom: -40px;
+  z-index: 10;
+  width: 250px;
+  height: auto;
+}
+  */
 
 .audio-message img {
   position: absolute;
@@ -232,16 +245,6 @@ input {
   bottom: -50px;
   z-index: 10;
   width: 148px;
-  height: auto;
-}
-
-.audio-message-robert img {
-  position: absolute;
-  align-self: last baseline;
-  left: -60px;
-  bottom: -40px;
-  z-index: 10;
-  width: 250px;
   height: auto;
 }
 
@@ -296,11 +299,4 @@ input {
   right: 20px;
 }
 
-.next-buttons button {
-  background-color: #faf64c;
-  color: #292929;
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  padding: 4px 18px;
-  border-radius: 20px;
-}
+
