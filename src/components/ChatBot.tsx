@@ -126,7 +126,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
             value={input}
             onChange={handleInputChange}
             placeholder={`Type a message to ${name}...`}
-            className="placeholder-gray-500"
+            className="placeholder-gray-500 text-gray-500"
           />
           <button onClick={() => sendMessage(input)}><img src={send} alt="Send" /></button>
         </div>
