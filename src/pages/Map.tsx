@@ -13,7 +13,9 @@ function Map() {
   const location = useLocation();
   const navigate = useNavigate();
   const { selectedStory } = useStory(); // Access selectedStory from context
-  const [showPopup, setShowPopup] = useState(location.state?.showPopup || false);
+  const [showPopup, setShowPopup] = useState(
+    location.state?.showPopup || false
+  );
   const [showNotification, setShowNotification] = useState(false);
   const [currentNotificationIndex, setCurrentNotificationIndex] = useState(0);
   const [concept, setConcept] = useState<string | null>(null);
@@ -28,7 +30,9 @@ function Map() {
 
   const handleShowNotification = () => {
     setShowNotification(true);
-    setCurrentNotificationIndex((prevIndex) => (prevIndex + 1) % notifications.length);
+    setCurrentNotificationIndex(
+      (prevIndex) => (prevIndex + 1) % notifications.length
+    );
   };
 
   useEffect(() => {
@@ -38,14 +42,17 @@ function Map() {
     }
   }, [showNotification]);
 
-  {/* THIS IS THE STORY READER USEEFFECT */}
+  {
+    /* THIS IS THE STORY READER USEEFFECT */
+  }
   useEffect(() => {
     if (selectedStory) {
       fetch(`${import.meta.env.BASE_URL}/assets/stories.json`)
         .then((res) => res.json())
         .then((data) => {
           const matchedStory = data.find(
-            (story: any) => story.storytype.toLowerCase() === selectedStory.toLowerCase()
+            (story: any) =>
+              story.storytype.toLowerCase() === selectedStory.toLowerCase()
           );
           if (matchedStory) {
             setConcept(matchedStory.concept);
@@ -83,7 +90,9 @@ function Map() {
         >
           <div className="w-4/5 max-w-md bg-white text-black p-4 rounded-lg shadow-lg flex flex-col">
             <div className="flex justify-between items-center">
-              <h2 className="text-lime-green text-lg font-bold">Greetings, adventurer!</h2>
+              <h2 className="text-lime-green text-lg font-bold">
+                Greetings, adventurer!
+              </h2>
               <button onClick={() => setShowPopup(false)}>
                 <X className="w-6 h-6 text-gray-700" />
               </button>

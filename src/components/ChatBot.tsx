@@ -6,10 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 // Define types for the props and state
 interface ChatBotProps {
-  name: string;
-  prompt: string;
-  presetResponses: Record<string, string>;
-  topMessage: string;
+    name: string;
+    prompt: string;
+    presetResponses: Record<string, string>;
+    topMessage: string;
 }
 
 interface OpenAIResponse {
@@ -21,8 +21,8 @@ interface OpenAIResponse {
   }
 
 interface Message {
-  text: string;
-  sender: "user" | "bot";
+    text: string;
+    sender: "user" | "bot";
 }
 
 export default function ChatBot ({ name, prompt, presetResponses, topMessage } : ChatBotProps) {
