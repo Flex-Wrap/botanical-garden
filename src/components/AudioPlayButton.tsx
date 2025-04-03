@@ -25,7 +25,7 @@ const AudioPlayButton: React.FC<AudioPlayButtonProps> = ({ name, category }) => 
   return (
     <button
       onClick={togglePlay}
-      className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition"
+      className="flex items-center gap-2 px-4 py-2 bg-lime-green text-white rounded-lg shadow-md hover:bg-blue-600 transition"
     >
       {isPlaying ? <Pause size={20} /> : <Play size={20} />} 
       <span>Play {name}</span>
