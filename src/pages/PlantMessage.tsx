@@ -13,7 +13,6 @@ export default function PlantMessage() {
     };
 
     const sanitizedClassName = name ? `body-${name.replace(/ /g, "-").replace(/[^a-zA-Z0-9-]/g, "")}` : "default-class";
-    console.log(sanitizedClassName);
 
     const handleGoToChat = () => {
         navigate(`/plant/${name}`)
@@ -70,7 +69,7 @@ export default function PlantMessage() {
           {/* Chat with me button and next icon */}
           <div className="next-buttons">
             <button onClick={handleGoToChat}>Chat With Me</button>
-            <button onClick={handleGoToChat}><img src={next} alt="Next" /></button>
+            <button onClick={handleGoToChat} className="bg-none"><img src={next} alt="Next" /></button>
           </div>
         </div>
       </div>

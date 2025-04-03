@@ -31,7 +31,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState<string>("");
 
-    const API_KEY = import.meta.env.REACT_APP_API_KEY;
+    const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
     const chatBoxRef = useRef<HTMLDivElement | null>(null);
 
@@ -80,7 +80,7 @@ export default function ChatBot ({ name, prompt, presetResponses, topMessage } :
           console.error("Error: Response structure is not as expected", response);
           setMessages((prevMessages) => [...prevMessages, { text: "Sorry, I am having trouble responding right now.", sender: "bot" }]);
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error("Error:", error);
         setMessages((prevMessages) => [...prevMessages, { text: "Sorry, I am having trouble responding right now.", sender: "bot" }]);
       }
