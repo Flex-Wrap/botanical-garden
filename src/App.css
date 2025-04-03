@@ -1,5 +1,17 @@
+.default-class {
+  background-image: url('assets/pedroBG.png');
+  background-size: cover;
+  background-position: center;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 17px 60px 17px;
+}
+
 .body-Pedro {
-  background-image: url("assets/pedroBG.png");
+  background-image: url('../public/assets/pedroBG.png');
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -11,7 +23,7 @@
 }
 
 .body-Angela {
-  background-image: url("assets/angelaBG.png");
+  background-image: url("../public/assets/angelaBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -22,8 +34,8 @@
   padding: 70px 17px 60px 17px;
 }
 
-.body-Lilly {
-  background-image: url("assets/lillyBG.png");
+.body-Lily {
+  background-image: url('../public/assets/lilyBG.png');
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -35,7 +47,7 @@
 }
 
 .body-Petra {
-  background-image: url("assets/petraBG.png");
+  background-image: url("../public/assets/petraBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -47,7 +59,7 @@
 }
 
 .body-Robert {
-  background-image: url("assets/robertBG.png");
+  background-image: url("../public/assets/robertBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -57,6 +69,19 @@
   flex-direction: column;
   padding: 70px 17px 60px 17px;
 }
+
+.body-Old-Joe {
+  background-image: url('../public/assets/oldjoeBG.png');
+  background-size: cover;
+  background-position: center;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 17px 60px 17px;
+}
+
 
 .chat-container {
   width: 100%;
@@ -245,13 +270,15 @@ input {
   line-height: 160%;
   letter-spacing: 0;
   padding: 20px 13px;
-  background-color: #20420b;
+  background-color: #e1eed9;
   border-radius: 16px;
+  color: #292929;
 }
 
 .message-box {
   height: auto;
   max-height: 350px;
+  width: 360px;
   margin-bottom: 20px;
   position: relative;
   z-index: 11;
