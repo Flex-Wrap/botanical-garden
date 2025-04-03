@@ -63,7 +63,7 @@ export default function PlantMessage() {
           </div>
 
           {/* Message box with typing effect */}
-          <div className="message-box w-[360px] ">
+          <div className="message-box">
             <p className="message-text">{displayedText}</p>
           </div>
 
