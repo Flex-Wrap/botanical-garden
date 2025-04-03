@@ -69,7 +69,7 @@ export default function PlantMessage() {
 
           {/* Chat with me button and next icon */}
           <div className="next-buttons">
-            <button>Chat With Me</button>
+            <button onClick={handleGoToChat}>Chat With Me</button>
             <img src={next} alt="Next" />
           </div>
         </div>
