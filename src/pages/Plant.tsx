@@ -9,14 +9,13 @@ export default function Plant() {
   const [loading, setLoading] = useState<boolean>(true);
 
   if (name) {
-    // Fetch the plant data when the component mounts or the 'name' param changes
+    {/*Fetch the plant data when the component mounts or the 'name' param changes*/}
     useEffect(() => {
       const fetchPlantData = async () => {
         try {
           const response = await fetch("/assets/characters.json");
           const data = await response.json();
           
-          // Find the plant by name
           const plant = data.find((plant: { name: string }) => plant.name.toLowerCase() === name.toLowerCase());
           
           if (plant) {
@@ -32,9 +31,8 @@ export default function Plant() {
       };
 
       fetchPlantData();
-    }, [name]); // Only re-run when the 'name' parameter changes
+    }, [name]); 
 
-    // Show a loading message while fetching data
     if (loading) {
       return <div>Loading...</div>;
     }
