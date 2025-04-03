@@ -22,8 +22,20 @@
   padding: 70px 17px 60px 17px;
 }
 
+.body-Pedro {
+  background-image: url("assets/pedroBG.png");
+  background-size: cover;
+  background-position: center;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 70px 17px 60px 17px;
+}
+
 .body-Angela {
-  background-image: url('assets/angelaBG.png');
+  background-image: url("assets/angelaBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -47,7 +59,7 @@
 }
 
 .body-Petra {
-  background-image: url('assets/petraBG.png');
+  background-image: url("assets/petraBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -59,7 +71,7 @@
 }
 
 .body-Robert {
-  background-image: url('assets/robertBG.png');
+  background-image: url("assets/robertBG.png");
   background-size: cover;
   background-position: center;
   min-width: 320px;
@@ -103,7 +115,7 @@
 }
 
 .bot-message {
-  background: #E1EED9;
+  background: #e1eed9;
   color: #294938;
   padding: 18px 14px;
   border-radius: 0 16px 16px 16px;
@@ -118,7 +130,7 @@
 }
 
 .user-message {
-  background: #EFEFEF;
+  background: #efefef;
   color: #294938;
   padding: 18px 14px;
   border-radius: 16px 0 16px 16px;
@@ -143,7 +155,7 @@ input {
   padding: 17px 12px;
   border: 0px;
   border-radius: 16px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -162,7 +174,7 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #E1EED9;
+  background-color: #e1eed9;
   width: auto;
   height: 115px;
   border-radius: 16px;
@@ -185,7 +197,7 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #E1EED9;
+  background-color: #e1eed9;
   width: auto;
   height: 115px;
   border-radius: 16px;
@@ -258,7 +270,7 @@ input {
   font-size: 14px;
   font-weight: 400;
   color: #294938;
-  background-color: #FAF64C;
+  background-color: #faf64c;
   padding: 18px 14px;
   border-radius: 16px;
 }
@@ -267,7 +279,7 @@ input {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 160%;
   letter-spacing: 0;
   padding: 20px 13px;
   background-color: #20420b;
@@ -296,7 +308,7 @@ input {
 }
 
 .next-buttons button {
-  background-color: #FAF64C;
+  background-color: #faf64c;
   color: #292929;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
