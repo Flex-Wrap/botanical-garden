@@ -9,11 +9,12 @@ export default function Plant() {
   const [loading, setLoading] = useState<boolean>(true);
 
   if (name) {
+    console.log(name);
     {/*Fetch the plant data when the component mounts or the 'name' param changes*/}
     useEffect(() => {
       const fetchPlantData = async () => {
         try {
-          const response = await fetch("/assets/characters.json");
+          const response = await fetch(`${import.meta.env.BASE_URL}assets/characters.json`);
           const data = await response.json();
           
           const plant = data.find((plant: { name: string }) => plant.name.toLowerCase() === name.toLowerCase());

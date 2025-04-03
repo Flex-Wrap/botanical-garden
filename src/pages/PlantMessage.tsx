@@ -11,6 +11,11 @@ export default function PlantMessage() {
         navigate("/map"); // Navigate to the map page
     };
 
+    const handleGoToChat = () => {
+        navigate(`/plant/${name}`)
+
+    };
+
     return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-white text-white">
         <div className={`body-${name}`}>
@@ -36,7 +41,7 @@ export default function PlantMessage() {
                 </div>   
 
                 {/* Chat with me button and next icon */}
-                <div className="next-buttons">
+                <div className="next-buttons" onClick={handleGoToChat}>
                     <button>Chat With Me</button>
                     <img src={next} alt="Next" />
                 </div>  
