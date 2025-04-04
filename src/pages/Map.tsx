@@ -61,8 +61,8 @@ function Map() {
 
       {/* Top Navigation Bar */}
       <div className="absolute top-10 right-0 w-full bg-transparent p-4 flex items-center justify-end gap-5">
-        <span className="text-deep-green text-lg">Choose another story</span>
-        <button onClick={() => navigate("/story-selection")}>
+        <span className="text-deep-green text-lg">Finish the story</span>
+        <button onClick={() => navigate("/end")}>
           <ArrowRight className="text-tight-black" />
         </button>
       </div>
