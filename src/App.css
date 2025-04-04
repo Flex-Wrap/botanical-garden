@@ -208,8 +208,8 @@ input {
 .audio-message {
   position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: end;
   width: auto;
   height: 60px;
   padding: 10px 10px 10px 100px;
