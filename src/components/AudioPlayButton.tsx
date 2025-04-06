@@ -9,7 +9,8 @@ type AudioPlayButtonProps = {
 const AudioPlayButton: React.FC<AudioPlayButtonProps> = ({ name, category }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const audioSrc = `${import.meta.env.BASE_URL}assets/audio/${category}_${name}.mp3`;
+  const satName = name.replace(/ /g, "_");
+  const audioSrc = `${import.meta.env.BASE_URL}assets/audio/${category}_${satName}.mp3`;
 
   const togglePlay = () => {
     if (!audioRef.current) return;
